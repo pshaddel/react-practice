@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import { BasicUseEffect } from './basics_use_effect';
 import { BasicUseEffectCleanUp } from './basics_use_effect_cleanup';
-import { AuthorizedTextComponent, BasicHOCWithAuthorization } from './basics_hoc';
+import { AuthorizedTextComponent } from './basics_hoc';
+import { BasicListRenderProp } from './basics_render_prop';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -35,6 +36,7 @@ function App() {
       <BasicUseEffect />
       <BasicUseEffectCleanUp />
       <AuthorizedTextComponent text='HOC' />
+      <BasicListRenderProp items={[{name: 'Poorshad'}, { name: 'Marisa' }]} renderItem={(item) => { return <option>{item.name}</option> }}  />
     </>
   );
 }
