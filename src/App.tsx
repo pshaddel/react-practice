@@ -6,6 +6,7 @@ import { BasicUseEffect } from './basics_use_effect';
 import { BasicUseEffectCleanUp } from './basics_use_effect_cleanup';
 import { AuthorizedTextComponent } from './basics_hoc';
 import { BasicListRenderProp } from './basics_render_prop';
+import { BasicUseCallback } from './basics_use_callback';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -36,7 +37,8 @@ function App() {
       <BasicUseEffect />
       <BasicUseEffectCleanUp />
       <AuthorizedTextComponent text='HOC' />
-      <BasicListRenderProp items={[{name: 'Poorshad'}, { name: 'Marisa' }]} renderItem={(item) => { return <option>{item.name}</option> }}  />
+      <BasicListRenderProp items={[{name: 'Poorshad'}, { name: 'Marisa' }]} renderItem={(item) => { return <option key={item.name}>{item.name}</option> }}  />
+      <BasicUseCallback />
     </>
   );
 }
