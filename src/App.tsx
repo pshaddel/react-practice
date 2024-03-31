@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import { BasicUseEffect } from './basics_use_effect';
 import { BasicUseEffectCleanUp } from './basics_use_effect_cleanup';
+import { AuthorizedTextComponent, BasicHOCWithAuthorization } from './basics_hoc';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,7 +21,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count * 1)}>
+        <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <p>
@@ -33,6 +34,7 @@ function App() {
 
       <BasicUseEffect />
       <BasicUseEffectCleanUp />
+      <AuthorizedTextComponent text='HOC' />
     </>
   );
 }
