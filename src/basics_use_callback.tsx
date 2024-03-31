@@ -1,9 +1,10 @@
 import { PropsWithChildren, memo, useCallback, useState } from "react";
 
 export function BasicUseCallback() {
-  return <Parent />
+  return <MemoiedParent />
 }
 
+const MemoiedParent = memo(Parent);
 function Parent({ children }: PropsWithChildren) {
   console.log('parent...')
   const [count, setCount] = useState(0);
