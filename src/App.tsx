@@ -7,7 +7,9 @@ import { BasicUseEffectCleanUp } from './basics_use_effect_cleanup';
 import { AuthorizedTextComponent } from './basics_hoc';
 import { BasicListRenderProp } from './basics_render_prop';
 import { BasicUseCallback } from './basics_use_callback';
+import { BasicMemo } from './basics_use_memo';
 
+const arr = [18, 4, -1, 241];
 function App() {
   const [count, setCount] = useState(0);
 
@@ -38,6 +40,7 @@ function App() {
       <AuthorizedTextComponent text='HOC' />
       <BasicListRenderProp items={[{name: 'Poorshad'}, { name: 'Marisa' }]} renderItem={(item) => { return <option key={item.name}>{item.name}</option> }}  />
       <BasicUseCallback />
+      <BasicMemo count={count} arr={arr} />
     </>
   );
 }
