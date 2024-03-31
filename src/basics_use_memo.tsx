@@ -1,12 +1,13 @@
 import { useMemo } from "react";
 
-export function BasicMemo({ arr, count }: { arr: number[], count: number }) {
-  const arrStr = arr.join(',')
+const names = ['poorshad', 'marisa'];
+
+export function BasicMemo({ search, count }: { search: { text: string }, count: number }) {
   const sortedArray = useMemo(() => {
-    console.log('sorting array... ', arrStr)
-    const sorted = arr.sort((a, b) => Number(a) - Number(b));
-    return sorted;
-  }, [arr]);
+    console.log('searching...')
+    const filterd = names.filter(elem => elem === search.text);
+    return filterd;
+  }, [search.text]);
 
   return <p> {count} /n { sortedArray.join(',')} </p>
 }
