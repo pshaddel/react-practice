@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import { BasicUseEffect } from './basics_use_effect';
+import { BasicUseEffectCleanUp } from './basics_use_effect_cleanup';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,6 +32,7 @@ function App() {
       </p>
 
       <BasicUseEffect />
+      <BasicUseEffectCleanUp />
     </>
   );
 }
