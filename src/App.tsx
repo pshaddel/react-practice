@@ -13,6 +13,8 @@ import { ThemeProvider } from './basics_theme_context';
 import { Vite } from './vite';
 import { BasicTransition } from './basics_use_transition';
 import { BasicDefferedValueParent } from './basics_use_deferred_value';
+import { ErrorBoundary } from './error_boundy';
+import { CorruptComponent } from './corrupt_component';
 
 function App() {
 
@@ -32,6 +34,9 @@ function App() {
         <ClassContextComponent />
         <BasicTransition />
         <BasicDefferedValueParent/>
+        <ErrorBoundary>
+          <CorruptComponent />
+        </ErrorBoundary>
       </ThemeProvider>
     </>
   );
