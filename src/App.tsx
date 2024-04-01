@@ -12,6 +12,7 @@ import { ClassContextComponent } from './basics_context_class_consumer';
 import { ThemeProvider } from './basics_theme_context';
 import { Vite } from './vite';
 import { BasicTransition } from './basics_use_transition';
+import { BasicDefferedValueParent } from './basics_use_deferred_value';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <FunctionContextComponent />
         <ClassContextComponent />
         <BasicTransition />
+        <BasicDefferedValueParent/>
       </ThemeProvider>
     </>
   );
