@@ -11,6 +11,7 @@ import { FunctionContextComponent } from './basics_context_function_consumer';
 import { ClassContextComponent } from './basics_context_class_consumer';
 import { ThemeProvider } from './basics_theme_context';
 import { Vite } from './vite';
+import { BasicTransition } from './basics_use_transition';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <BasicUseRef />
         <FunctionContextComponent />
         <ClassContextComponent />
+        <BasicTransition />
       </ThemeProvider>
     </>
   );

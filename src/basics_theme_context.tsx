@@ -23,4 +23,4 @@ export function useTheme(): [boolean, Function] {
     const theme = useContext(ThemeContext);
     const toggleTheme = useContext(ThemeUpdateContext);
     return [theme, toggleTheme];
-}
+} 
