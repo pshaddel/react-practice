@@ -29,8 +29,8 @@ export function BasicUseEffect() {
     <div>
       UseEffect
       <ol className="basic_use_effect">
-        {data?.entries.map((element) => {
-          return <option>{element.Description} </option>;
+        {data?.entries.map((element, index) => {
+          return <option key={index + element.Description}>{element.Description} </option>;
         })}
       </ol>
     </div>

@@ -16,6 +16,7 @@ import { BasicDefferedValueParent } from './basics_use_deferred_value';
 import { ErrorBoundary } from './error_boundy';
 import { CorruptComponent } from './corrupt_component';
 import { Profiler, StrictMode } from 'react';
+import { BasicUseReducer } from './basics_use_reducer';
 
 function App() {
 
@@ -42,6 +43,8 @@ function App() {
         <ErrorBoundary>
           <CorruptComponent />
         </ErrorBoundary>
+
+        <BasicUseReducer />
       </ThemeProvider>
       </StrictMode>
   );
