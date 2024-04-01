@@ -15,7 +15,7 @@ import { BasicTransition } from './basics_use_transition';
 import { BasicDefferedValueParent } from './basics_use_deferred_value';
 import { ErrorBoundary } from './error_boundy';
 import { CorruptComponent } from './corrupt_component';
-import { StrictMode } from 'react';
+import { Profiler, StrictMode } from 'react';
 
 function App() {
 
@@ -34,13 +34,24 @@ function App() {
         <FunctionContextComponent />
         <ClassContextComponent />
         <BasicTransition />
+
+        <Profiler id="differedValue" onRender={onRender}>
         <BasicDefferedValueParent/>
+        </Profiler>
+        
         <ErrorBoundary>
           <CorruptComponent />
         </ErrorBoundary>
       </ThemeProvider>
       </StrictMode>
   );
+}
+
+function onRender(id: string, phase: string, actualDuration: number, baseDuration: number, startTime: number, commitTime: number) {
+  // Aggregate or log render timings...
+  console.log({
+    id, phase, actualDuration, baseDuration, startTime, commitTime
+  })
 }
 
 export default App;
