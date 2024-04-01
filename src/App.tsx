@@ -9,6 +9,7 @@ import { BasicListRenderProp } from './basics_render_prop';
 import { BasicUseCallback } from './basics_use_callback';
 import { BasicMemo } from './basics_use_memo';
 import { BasicSuspense } from './basics_suspense';
+import { BasicUseRef } from './basics_use_ref';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -42,6 +43,7 @@ function App() {
       <BasicUseCallback />
       <BasicMemo count={count} search={ { text: 'poorshad' } } />
       <BasicSuspense />
+      <BasicUseRef />
     </>
   );
 }

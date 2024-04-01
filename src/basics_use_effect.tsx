@@ -23,7 +23,7 @@ export function BasicUseEffect() {
         const entries = data.entries.slice(0, 5);
         data.entries = entries;
         setData(data);
-      });
+      }).catch(e => {e});
   });
   return (
     <div>
