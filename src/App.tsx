@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -10,40 +10,42 @@ import { BasicUseCallback } from './basics_use_callback';
 import { BasicMemo } from './basics_use_memo';
 import { BasicSuspense } from './basics_suspense';
 import { BasicUseRef } from './basics_use_ref';
+import { FunctionContextComponent } from './basics_context_function_consumer';
+import { ClassContextComponent } from './basics_context_class_consumer';
+
+export const ThemeContext = createContext(false);
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [darkTheme, setDarkTheme] = useState(false);
+
+  function toggleTheme() {
+    setDarkTheme(prevTheme => !prevTheme);
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <BasicUseEffect />
-      <BasicUseEffectCleanUp />
-      <AuthorizedTextComponent text='HOC' />
-      <BasicListRenderProp items={[{name: 'Poorshad'}, { name: 'Marisa' }]} renderItem={(item) => { return <option key={item.name}>{item.name}</option> }}  />
-      <BasicUseCallback />
-      <BasicMemo count={count} search={ { text: 'poorshad' } } />
-      <BasicSuspense />
-      <BasicUseRef />
+      <ThemeContext.Provider value={darkTheme}>
+        <div style={{backgroundColor: darkTheme ? 'grey' : 'white'}}>
+          <a href="https://vitejs.dev" target="_blank">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
+        <BasicUseEffect />
+        <BasicUseEffectCleanUp />
+        <AuthorizedTextComponent text='HOC' />
+        <BasicListRenderProp items={[{ name: 'Poorshad' }, { name: 'Marisa' }]} renderItem={(item) => { return <option key={item.name}>{item.name}</option> }} />
+        <BasicUseCallback />
+        <BasicMemo count={1} search={{ text: 'poorshad' }} />
+        <BasicSuspense />
+        <BasicUseRef />
+        
+        <button onClick={toggleTheme}>Toggle Theme</button>
+        <FunctionContextComponent />
+        <ClassContextComponent />
+      </ThemeContext.Provider>
     </>
   );
 }
