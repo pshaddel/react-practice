@@ -15,11 +15,12 @@ import { BasicTransition } from './basics_use_transition';
 import { BasicDefferedValueParent } from './basics_use_deferred_value';
 import { ErrorBoundary } from './error_boundy';
 import { CorruptComponent } from './corrupt_component';
+import { StrictMode } from 'react';
 
 function App() {
 
   return (
-    <>
+     <StrictMode>
       <ThemeProvider>
         <Vite />
         <BasicUseEffect />
@@ -38,7 +39,7 @@ function App() {
           <CorruptComponent />
         </ErrorBoundary>
       </ThemeProvider>
-    </>
+      </StrictMode>
   );
 }
 
