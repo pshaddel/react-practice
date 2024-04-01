@@ -8,6 +8,7 @@ import { AuthorizedTextComponent } from './basics_hoc';
 import { BasicListRenderProp } from './basics_render_prop';
 import { BasicUseCallback } from './basics_use_callback';
 import { BasicMemo } from './basics_use_memo';
+import { BasicSuspense } from './basics_suspense';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -40,6 +41,7 @@ function App() {
       <BasicListRenderProp items={[{name: 'Poorshad'}, { name: 'Marisa' }]} renderItem={(item) => { return <option key={item.name}>{item.name}</option> }}  />
       <BasicUseCallback />
       <BasicMemo count={count} search={ { text: 'poorshad' } } />
+      <BasicSuspense />
     </>
   );
 }
