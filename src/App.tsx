@@ -17,6 +17,7 @@ import { ErrorBoundary } from './error_boundy';
 import { CorruptComponent } from './corrupt_component';
 import { Profiler, StrictMode } from 'react';
 import { BasicUseReducer } from './basics_use_reducer';
+import { createPortal } from 'react-dom';
 
 function App() {
 
@@ -43,6 +44,13 @@ function App() {
         <ErrorBoundary>
           <CorruptComponent />
         </ErrorBoundary>
+
+        <div>
+          Portal Creator...
+          {
+            createPortal(<div>Coming From React Portal</div>, document.getElementById('div_portal') as HTMLElement)
+          }
+        </div>
 
         <BasicUseReducer />
       </ThemeProvider>
