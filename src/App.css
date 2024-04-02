@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+:root {
+  --first-color: aliceblue;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -42,7 +46,7 @@
 }
 
 .basic_use_effect {
-  background-color: aliceblue;
+  background-color: var(--first-color);
   border-radius: 6px;
   padding: 10px;
   text-align: left;
