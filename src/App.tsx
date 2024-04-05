@@ -18,6 +18,7 @@ import { CorruptComponent } from './corrupt_component';
 import { Profiler, StrictMode } from 'react';
 import { BasicUseReducer } from './basics_use_reducer';
 import { createPortal } from 'react-dom';
+import { Cat, CatChild } from './cat';
 
 function App() {
 
@@ -53,6 +54,9 @@ function App() {
         </div>
 
         <BasicUseReducer />
+        <Cat>
+        <CatChild />
+        </Cat>
       </ThemeProvider>
       </StrictMode>
   );
